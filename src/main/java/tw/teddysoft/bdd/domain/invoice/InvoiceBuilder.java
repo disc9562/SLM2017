@@ -20,8 +20,6 @@ public class InvoiceBuilder {
     }
 
     public InvoiceBuilder withTaxIncludedPrice(int taxIncludedPrice) {
-//        if(this.taxExcludedPrice > 0)
-//            this.taxExcludedPrice = 0;
         this.taxIncludedPrice = taxIncludedPrice;
         return this;
     }
@@ -35,10 +33,10 @@ public class InvoiceBuilder {
                 , InvoiceCalculator.getVAT(taxIncludedPrice, vatRate));
     }
 
-    public InvoiceBuilder withTaxExcludedPrice(Integer arg1) {
+    public InvoiceBuilder withTaxExcludedPrice(int taxExcludedPrice) {
         if(this.taxIncludedPrice > 0)
             this.taxIncludedPrice = 0;
-        this.taxExcludedPrice=arg1;
+        this.taxExcludedPrice=taxExcludedPrice;
         return this;
     }
 }
