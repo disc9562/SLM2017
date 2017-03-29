@@ -92,8 +92,7 @@
       </goals>
       <configuration>
         <image>disc9562/slm2017:v1</image>
-        <dockerDirectory>${project.basedir}/docker</dockerDirectory>
-        <newName>disc9562/slm2017:v1</newName>
+        <dockerDirectory>docker</dockerDirectory>
       </configuration>
     </execution>
     <execution>
