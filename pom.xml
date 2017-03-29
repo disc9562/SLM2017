@@ -53,9 +53,9 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <!--<descriptorRefs>-->
-                        <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
-                    <!--</descriptorRefs>-->
+                    <descriptorRefs>
+                        <descriptorRef></descriptorRef>
+                    </descriptorRefs>
                     <archive>
                         <manifest>
                             <mainClass>tw.teddysoft.bdd.domain.invoice.Main</mainClass>
