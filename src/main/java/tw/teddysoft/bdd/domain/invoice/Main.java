@@ -8,7 +8,7 @@ public class Main {
         double vatRate = 0;
         int excludedPrice = 0;
         int includedPrice = 0;
-        Invoice invoice;
+        Invoice invoice = null;
         for(int i = 0; i < args.length; i = i + 2){
            if(args[i].equals("-r")){
                 vatRate = Double.parseDouble(args[i+1]);
@@ -25,6 +25,10 @@ public class Main {
                System.out.println("-r       setting vatRate");
                System.out.println("-i       setting TaxIncludedPrice");
                System.out.println("-e       setting TaxExcludedPrice");
+               System.exit(0);
+           }
+           else{
+                System.out.println("Usage -h to know how to use");
            }
         }
 
@@ -34,11 +38,15 @@ public class Main {
                     withTaxIncludedPrice(includedPrice).
                     issue();
         }
-        else{
+        else if(excludedPrice != 0){
             invoice = InvoiceBuilder.newInstance().
                     withVatRate(vatRate).
                     withTaxExcludedPrice(excludedPrice).
                     issue();
+        }
+        else{
+            System.out.println("請輸入含稅價格或者未稅價格");
+            System.exit(0);
         }
         System.out.println("TaxIncludedPrice: " + invoice.getTaxIncludedPrice());
         System.out.println("VatRate: " + invoice.getVatRate());
