@@ -11,7 +11,7 @@ public class InvoiceCalculatorTest {
 
     //TODO: Rename the test case to reveal its intent
     @Test
-    public void test_taxincluded_price_10_get_vat_0(){
+    public void taxincluded_price_10_get_vat_0(){
         assertEquals(0,InvoiceCalculator.getVAT(10,0.05));
     }
 }
