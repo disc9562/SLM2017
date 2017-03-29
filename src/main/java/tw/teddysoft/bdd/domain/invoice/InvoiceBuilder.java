@@ -34,8 +34,7 @@ public class InvoiceBuilder {
     }
 
     public InvoiceBuilder withTaxExcludedPrice(int taxExcludedPrice) {
-        if(this.taxIncludedPrice > 0)
-            this.taxIncludedPrice = 0;
+        this.taxIncludedPrice = 0;
         this.taxExcludedPrice=taxExcludedPrice;
         return this;
     }
